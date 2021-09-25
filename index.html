@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+
+        <div class="header">
+            <div class="header__menu">
+                <img src="./img/meuss.png" alt="">
+                <img src="./img/icons8-casa-20.png" alt="">
+                    <input  class="search" type="search" placeholder="Buscar" aria-label="Search">
+            </div>
+            <button onclick="addTaskSchedule()">click</button>
+            <div class="header__left">
+                <button type="button" onclick="openModal()" class="buttonE">
+                    <img src="./img/plus.png" alt="">
+                </button>
+                <img src="./img/campana.png"  alt="">
+                <img src="./img/trading.png" alt="">
+                <img src="./img/gato.png" alt="">
+        
+            </div>
+        </div>
+    
+    <section class="contenedor">
+        <!-- <div class="aside">
+            <div class="aside_menu">
+                <div class="aside__menu--list">
+                    <ul class="menu__list">
+                        <li class="menuItem" ><img src="./img/mensaje.png" alt="mensajes"> Bandeja </li> 
+                        <li class="menuItem"> <img src="./img/icons8-calendario-16-20.png" alt="hoy"> Hoy</li>
+                        <li class="menuItem"> <img src="./img/cuaderno.png" alt="proximaTarea">Proximo</li>
+                    </ul>
+                </div>
+                <div class="list--slider">
+                    <div class="menu__list--two slide">
+                        <img src="./img/masque.png" alt="iconPlus">
+                           <span>Proyecto</span>
+                    </div>
+                    <div class="menu__list--three slide">
+                        <img src="./img/masque.png" alt="iconPlus">
+                        <span>Filtros</span>
+                    </div>
+                    <div class="menu__list--hashtag slide">
+                    <img src="./img/masque.png" alt=iconPlus""> 
+                    <span>Etiquetas</span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="content">
+            <div class="content__today">
+                <label for="start">Start date:</label>
+
+                <input type="date" id="start" name="trip-start"
+                    value="2018-07-22"
+                    min="2021-01-01" max="2050-12-31">
+
+                <!-- <span>HOY</span>
+                     <span>/</span>
+                <span>Miercoles</span> -->
+            </div>
+            <div class="content__after">
+                <div class="content__header">
+                    <h2>Proximos</h2>
+                    <h3>item</h3>
+                </div>
+                <div class="content__header--task">
+                    <div class="content__body--task ">
+                        <div class="calendario">
+                            <h5>Lunes</h5>
+                        </div>
+                        <div class="body__show--task"></div>
+                        <div class="body__task--about">
+                            <h6>tareas por hacer : </h6>           
+                            <h6 id="parrafo"> </h6>
+                        </div>
+                        <div class="body__task--day">
+                            <h6>Dia :</h6>
+                            <h6 class="days"></h6>
+                            
+                        </div>
+                        <div class="body__task--day">
+                            <h6>horario :</h6>
+                            <h6 class="horario"></h6>
+                            
+                        </div>
+                      
+                        <div class="task__flex--end">
+                            <button type="button" onclick=" clickScheduleDay()"  id="sun" class="buttonE ">
+                                <img src="./img/sun1.png" alt="" srcset="">
+                            </button>
+                            <button type="button" id="moon" onclick=" clickScheduleNight()"  class="buttonE">
+                                <img id="moonImg" src="./img/moon7.png" alt="" srcset="">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="content__body--task">
+                        <div class="calendario ">
+                            <h5>Lunes</h5>
+                        </div>
+                        <div class="body__show--task" onclick="showTask()">
+                            <h5 class="task__calendar"></h5>
+                            
+                        </div>
+                        <div class="body__show--task"></div>
+                        <div class="body__show--task"></div>
+                    </div>
+                    <div class="content__body--task">
+                        <div class="calendario">
+                            <h5>Martes</h5>
+                        </div>
+                        <div class="body__show--task"></div>
+                        <div class="body__show--task"></div>
+                        <div class="body__show--task"></div>
+                    </div>
+                    <div class="content__body--task">
+                        <div class="calendario">
+                            <h5>Miercoles</h5>
+                        </div>
+                        <div class="body__show--task"></div>
+                        <div class="body__show--task"></div>
+                        <div class="body__show--task"></div>
+                    </div>
+                    <div class="content__body--task"> 
+                        <div class="calendario">
+                            <h5>Jueves</h5>
+                        </div>
+                        <div class="body__show--task"></div>
+                        <div class="body__show--task"></div>
+                        <div class="body__show--task"></div>
+                    </div>
+                    <div class="content__body--task">
+                        <div class="calendario">
+                            <h5>Viernes</h5>
+                        </div>
+                        <div class="body__show--task"></div>
+                        <div class="body__show--task"></div>
+                        <div class="body__show--task"></div>
+                    </div>
+                    <div class="content__body--task">
+                        <div class="calendario">
+                            <h5>Sabado</h5>
+                        </div>
+                        <div class="body__show--task"></div>
+                        <div class="body__show--task"></div>
+                        <div class="body__show--task"></div>
+                    </div>
+                    <div class="content__body--task">
+                        <div class="calendario">
+                            <h5>Domingo</h5>
+                        </div>
+                        <div class="body__show--task"></div>
+                        <div class="body__show--task"></div>
+                        <div class="body__show--task"></div>
+                    </div>
+                </div> 
+            </div> 
+        </div>
+        <div  class="ventana hidden">
+            <div class="ventana__content">
+                <div class="ventana__content--header">
+                    <h6>Añadir tareas rapidamente</h6>
+                   <button type="button" id="buttonClose" onclick="closeModal()" class="buttonE">
+                        <img src="./img/close.png" alt="" srcset="">
+                   </button>
+                </div>
+                <div class="ventana__content--body">
+                    <div class="ventana__content--hijo">
+                        <div class="content__input">
+                            <form action="">
+                                <div class="input__group--day">
+                                    <div class="input-group my-3 ">
+                                        <div class="input-group-text ">
+                                            <img src="./img/cuaderno.png"  alt="" srcset="">
+                                        </div>
+                                        <input type="text" class="form-control about" placeholder="ejm. Barrer la casa"  aria-label="Text input with radio button">
+                                      </div>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-text">
+                                            <img src="./img/icons8-calendario-16-20.png" alt="" srcset="">
+                                          <!-- <input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input"> -->
+                                        </div>
+                                        <input type="text" class="form-control day" placeholder="22/05//2025" aria-label="Text input with radio button">
+                                      </div>
+                                    <!-- <img src="./img/icons8-calendario-16-20.png" alt="" srcset="">
+                                    <label for="about"></label>
+                                    <input type="number" class="form-control day " placeholder="Task"  aria-describedby="basic-addon1"> -->
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="content__button">   
+                            <button type="button" class="addTask " onclick="onclickSendTask()"  onclick="cerrarModal()"  id="sendInfo">
+                                <img src="./img/felcha.png" alt="" srcset="">
+                                <span>Enviar</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modals hidden ">
+            <div class="modalsItems">
+               <div class="modalsItemsChild">
+                   <div class="ItemsChildHeader">
+                        <button type="button" id="buttonClose" onclick="closeModal()" class="buttonE">
+                            <img src="./img/close.png" alt="" srcset="">
+                        </button>
+                   
+                   </div>
+                   <div class="itemsChildBody">
+                    <div class="itemsChildBody1">
+                        <div class="input-group">
+                            <div class="input-group-text bgInput">
+                              <input class="form-check-input my-3" type="radio" value="" aria-label="Radio button for following text input">
+                            </div>
+                            <p class="infoTask"></p>
+                        </div>
+                            <input type="text" class="form-control bgInput wInput" placeholder="Description" aria-label="Text input with radio button">
+                            <div class="fecha" id="">
+                            <span>15/07/2002</span>
+                        </div>
+                    </div>
+                    <div class="itemsChildBody2"></div>
+                    <div class="itemsChildBody3"></div>
+                    <div class="itemsChildBody4"></div>
+
+               </div>
+               </div> 
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
